@@ -9,6 +9,19 @@ namespace TelerikWpfApp1.Data
 {
     public class ProblemGridData
     {
+        public static SortedList<string, string> GetHeaderNames()
+        {
+            var headerNames = new SortedList<string , string>();
+
+            headerNames.Add("ProblemId", "شناسه دوشواری");
+            headerNames.Add("ProblemDesc", "توضیحات");
+            headerNames.Add("Date", "تاریخ");
+            headerNames.Add("Time", "زمان");
+            headerNames.Add("Keywords", "کلمات کلیدی");
+            headerNames.Add("IsSolved", "حل شده");
+
+            return headerNames;
+        }
         public static List<ProblemGridViewModel> GetData()
         {
             var dataList = new List<ProblemGridViewModel>();
@@ -35,7 +48,8 @@ namespace TelerikWpfApp1.Data
                 ProblemDesc = "مشکل قمبل زاده اردبیلی طبابایی 03",
                 Date = "1401/01/06",
                 Time = "08:26",
-                Keywords = "Sara،اردبیل"
+                Keywords = "Sara،اردبیل",
+                IsSolved = true
             });
             dataList.Add(new ProblemGridViewModel()
             {
@@ -43,7 +57,8 @@ namespace TelerikWpfApp1.Data
                 ProblemDesc = "مشکل قمبل زاده اردبیلی طبابایی 04",
                 Date = "1401/01/10",
                 Time = "09:26",
-                Keywords = "Helia،اردبیل"
+                Keywords = "Helia،اردبیل",
+                IsSolved = true
             });
             dataList.Add(new ProblemGridViewModel()
             {
@@ -75,7 +90,8 @@ namespace TelerikWpfApp1.Data
                 ProblemDesc = "مشکل قمبل زاده اردبیلی طبابایی 08",
                 Date = "1401/01/29",
                 Time = "23:03",
-                Keywords = "amir mohamad،اردبیل"
+                Keywords = "amir mohamad،اردبیل",
+                IsSolved = true
             });
             dataList.Add(new ProblemGridViewModel()
             {
@@ -83,7 +99,8 @@ namespace TelerikWpfApp1.Data
                 ProblemDesc = "مشکل قمبل زاده اردبیلی طبابایی 09",
                 Date = "1401/01/20",
                 Time = "19:48",
-                Keywords = "hamed،اردبیل"
+                Keywords = "hamed،اردبیل",
+                IsSolved = true
             });
             dataList.Add(new ProblemGridViewModel()
             {

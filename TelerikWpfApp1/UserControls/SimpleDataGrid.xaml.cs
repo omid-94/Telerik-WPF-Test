@@ -20,14 +20,30 @@ namespace TelerikWpfApp1.UserControls
     /// </summary>
     public partial class SimpleDataGrid : UserControl
     {
+        private SortedList<string, string> _HeaderNames;
         public object ItemsSource
         {
             get { return DataGrid.ItemsSource; }
             set { DataGrid.ItemsSource = value; }
         }
+        public SortedList<string , string> HeaderNames
+        {
+            get { return this._HeaderNames; }
+            set {
+                this._HeaderNames = value;
+                _SetHeaderNames();
+            }
+        }
         public SimpleDataGrid()
         {
             InitializeComponent();
+        }
+        private void _SetHeaderNames()
+        {
+            foreach(KeyValuePair<string, string> item in _HeaderNames)
+            {
+                DataGrid.Columns[item.Key].Header = item.Value;
+            }
         }
     }
 }

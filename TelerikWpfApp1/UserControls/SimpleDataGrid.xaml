@@ -12,7 +12,9 @@
             FlowDirection="RightToLeft"
             ColumnWidth="*" 
             AutoExpandGroups="False"
-            x:Name="DataGrid"/>
+            x:Name="DataGrid">
+            
+        </telerik:RadGridView>
         <!--
                 <telerik:RadGridView 
                      ColumnWidth="*" 

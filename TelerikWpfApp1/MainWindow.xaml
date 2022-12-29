@@ -3,17 +3,28 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
                 xmlns:local="clr-namespace:TelerikWpfApp1.UserControls"
-                Title="MainWindow" Height="700" Width="1000"
+                Title="MainWindow" Height="600" Width="1000"
                 Loaded="Window_Loaded">
-    <StackPanel>
-        <local:SimpleDataGrid
-            x:Name="MyGrid"
-            Height="400"
-            VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-            />
-        <local:Carousel x:Name="MyCarousel" Height="350"
-                        VerticalAlignment="Stretch" 
-                        HorizontalAlignment="Stretch" 
-                        Loaded="Carousel_Loaded"/>
-    </StackPanel>
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="Black" />
+                <GradientStop Offset="1" Color="Gray" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
+    <ScrollViewer>
+        <StackPanel>
+            <local:SimpleDataGrid
+                x:Name="MyGrid"
+                Height="250"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch"
+                Margin="10,30,10,10"/>
+            <local:Carousel x:Name="MyCarousel" Height="350"
+                            VerticalAlignment="Stretch" 
+                            HorizontalAlignment="Stretch" 
+                            Margin="0,30,0,30"/>
+        </StackPanel>
+    </ScrollViewer>
 </Window>
