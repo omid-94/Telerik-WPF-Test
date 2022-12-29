@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TelerikWpfApp1.Windows;
 
 namespace TelerikWpfApp1.UserControls
 {
@@ -62,6 +63,13 @@ namespace TelerikWpfApp1.UserControls
         {
             this.ImageHeight = 250;
             this.ImageWidth = 500;
+        }
+
+        private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var imagePreview = new PicturePreview();
+            imagePreview.ImageSource = this.ImageSource;
+            imagePreview.Show();
         }
     }
 }

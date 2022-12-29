@@ -78,6 +78,9 @@
     <Compile Include="UserControls\SimpleDataGrid.xaml.cs">
       <DependentUpon>SimpleDataGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\PicturePreview.xaml.cs">
+      <DependentUpon>PicturePreview.xaml</DependentUpon>
+    </Compile>
     <Page Include="Styles\CarouselItemStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\SimpleDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PicturePreview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
