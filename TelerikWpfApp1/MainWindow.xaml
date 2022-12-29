@@ -13,7 +13,7 @@
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </Window.Background>
-    <ScrollViewer>
+    <ScrollViewer x:Name="MyScrollViewer">
         <StackPanel>
             <local:SimpleDataGrid
                 x:Name="MyGrid"
@@ -29,6 +29,11 @@
                     Margin="0,10,0,20"
                     Background="Aqua" Click="OpenFile_Click">
                 <TextBlock Text="Open File" FontSize="20"/>
+            </Button>
+            <Button x:Name="OpenNavigation" Width="300" Height="50"
+                    Margin="0,10,0,20"
+                    Background="Aqua" Click="OpenNavigation_Click">
+                <TextBlock Text="Open Navigation" FontSize="20"/>
             </Button>
         </StackPanel>
     </ScrollViewer>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="TelerikWpfApp1.Windows.Navigation.DrawerNavigation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelerikWpfApp1.Windows.Navigation"
+        mc:Ignorable="d"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        Title="DrawerNavigation" Height="500" Width="700">
+    <Grid>
+        <telerik:RadNavigationView x:Name="navigationView" 
+                                   SelectionChanged ="navigationView_SelectionChanged"
+                                   CompactPaneWidth="50">
+            <telerik:RadNavigationView.PaneHeader>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Source="/Resources/Images/tazarv.jpg"/>
+                    <TextBlock Text="Omid's Drawer 😜" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadNavigationView.PaneHeader>
+            <telerik:RadNavigationView.Items>
+                <telerik:RadNavigationViewItem Content="Bookmarks">
+                    <telerik:RadNavigationViewItem.Icon>
+                        <telerik:RadGlyph Glyph="&#xe303;" FontSize="16"/>
+                    </telerik:RadNavigationViewItem.Icon>
+                </telerik:RadNavigationViewItem>
+                <telerik:RadNavigationViewItem Content="Favorites">
+                    <telerik:RadNavigationViewItem.Icon>
+                        <telerik:RadGlyph Glyph="&#xe301;" FontSize="16"/>
+                    </telerik:RadNavigationViewItem.Icon>
+                </telerik:RadNavigationViewItem>
+                <telerik:RadNavigationViewItem Content="Files">
+                    <telerik:RadNavigationViewItem.Icon>
+                        <telerik:RadGlyph Glyph="&#xe901;" FontSize="16"/>
+                    </telerik:RadNavigationViewItem.Icon>
+                </telerik:RadNavigationViewItem>
+            </telerik:RadNavigationView.Items>
+            <!--<telerik:RadNavigationView.Content>
+                <TextBlock Text="My Content" Foreground="Black" Margin="5"/>
+            </telerik:RadNavigationView.Content>-->
+        </telerik:RadNavigationView>
+    </Grid>
+</Window>

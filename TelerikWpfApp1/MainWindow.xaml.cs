@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TelerikWpfApp1.Data;
+using TelerikWpfApp1.Windows.Navigation;
 
 namespace TelerikWpfApp1
 {
@@ -34,6 +35,8 @@ namespace TelerikWpfApp1
 
             this.MyGrid.ItemsSource = ProblemGridData.GetData();
             this.MyGrid.HeaderNames = ProblemGridData.GetHeaderNames();
+
+            this.MyScrollViewer.ScrollToEnd();
         }
 
         private void OpenFile_Click(object sender, RoutedEventArgs e)
@@ -71,6 +74,13 @@ namespace TelerikWpfApp1
             {
                 MessageBox.Show("Cannot open file " + path);
             }
+        }
+
+        private void OpenNavigation_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new DrawerNavigation();
+            window.ShowDialog();
+            window.Close();
         }
     }
 }

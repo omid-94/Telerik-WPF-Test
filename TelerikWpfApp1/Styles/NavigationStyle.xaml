@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TelerikWpfApp1.Styles"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <!-- If you are using the NoXaml binaries, you will have to base the style on the default one for the theme like so: 
+    <Style TargetType="telerik:RadNavigationView" BasedOn="{StaticResource RadNavigationViewStyle}">-->
+
+    <Style TargetType="telerik:RadNavigationView">
+        <Setter Property="telerik:AnimationManager.AnimationSelector">
+            <Setter.Value>
+                <telerik:AnimationSelector>
+                    <telerik:ResizeAnimation AnimationName="ResizePaneAnimation" TargetElementName="PART_PaneRoot" 
+                                             Duration="0:0:2" ResizeMode="Horizontal">
+                        <telerik:ResizeAnimation.Easing>
+                            <ExponentialEase EasingMode="EaseOut" />
+                        </telerik:ResizeAnimation.Easing>
+                    </telerik:ResizeAnimation>
+                    <telerik:SlideAnimation AnimationName="MinimalPaneOpenAnimation" TargetElementName="PART_PaneRoot" Duration="0:0:0.2" PixelsToAnimate="250" Orientation="Horizontal" Direction="In" />
+                    <telerik:SlideAnimation AnimationName="MinimalPaneCloseAnimation" TargetElementName="PART_PaneRoot" Duration="0:0:0.2" PixelsToAnimate="250" Orientation="Horizontal" Direction="Out"/>
+                </telerik:AnimationSelector>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
