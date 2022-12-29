@@ -29,6 +29,7 @@ namespace TelerikWpfApp1
         {
             //this.MyCarousel.ItemsSource = EmployeeService.GetEmployees();
             this.MyCarousel.ItemsSource = CarouselImageData.GetData();
+            this.MyGrid.ItemsSource = ProblemGridData.GetData();
         }
 
         private void Carousel_Loaded(object sender, RoutedEventArgs e)
