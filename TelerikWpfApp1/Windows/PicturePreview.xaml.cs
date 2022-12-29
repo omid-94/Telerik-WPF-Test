@@ -35,8 +35,6 @@ namespace TelerikWpfApp1.Windows
         {
             InitializeComponent();
         }
-        //public ICommand MouseDoubleClickCommand { get; } = new DelegateCommand<object>(obj => { MessageBox.Show(""); });
-
         private void Window_MouseWheel(object sender, MouseWheelEventArgs e)
         {
             try
