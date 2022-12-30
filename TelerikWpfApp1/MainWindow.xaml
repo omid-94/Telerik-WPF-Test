@@ -30,6 +30,12 @@
                     Background="Aqua" Click="OpenFile_Click">
                 <TextBlock Text="Open File" FontSize="20"/>
             </Button>
+
+            <Button x:Name="PlayVideo" Width="150" Height="50"
+                    Margin="0,10,0,20"
+                    Background="Aqua" Click="PlayVideo_Click">
+                <TextBlock Text="Play test Video" FontSize="20"/>
+            </Button>
         </StackPanel>
     </ScrollViewer>
 </Window>

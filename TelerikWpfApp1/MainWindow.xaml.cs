@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TelerikWpfApp1.Data;
+using TelerikWpfApp1.UserControls;
 
 namespace TelerikWpfApp1
 {
@@ -71,6 +72,14 @@ namespace TelerikWpfApp1
             {
                 MessageBox.Show("Cannot open file " + path);
             }
+        }
+
+        public void PlayVideo_Click(object sender, RoutedEventArgs e)
+        {
+            TelerikWpfApp1.Windows.VLCPlayer vlc = new TelerikWpfApp1.Windows.VLCPlayer();
+            vlc.Play();
+            vlc.ShowDialog();
+            vlc.Close();
         }
     }
 }
