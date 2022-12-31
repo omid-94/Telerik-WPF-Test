@@ -42,24 +42,24 @@ namespace TelerikWpfApp1.Windows
 
         private void prepare()
         {
-            //VLC_Path = System.Configuration.ConfigurationManager.AppSettings["VLC_Path"].ToString();
-            //if(string.IsNullOrEmpty(value))
-            //{
-            //    var dlg = new OpenFileDialog();
-            //    dlg.DefaultExt = "vlc.exe";
-            //    dlg.Filter = "VLC (vlc.exe)|vlc.exe|" +
-            //        "Shortcut (*.lnk)|*.lnk";
+            VLC_Path = System.Configuration.ConfigurationManager.AppSettings["VLC_Path"].ToString();
+            if (string.IsNullOrEmpty(VLC_Path))
+            {
+                var dlg = new OpenFileDialog();
+                dlg.DefaultExt = "vlc.exe";
+                dlg.Filter = "VLC (vlc.exe)|vlc.exe|" +
+                    "Shortcut (*.lnk)|*.lnk";
 
-            //    var result = dlg.ShowDialog();
-            //    if (result == System.Windows.Forms.DialogResult.OK)
-            //    {
-            //        Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //        VLC_Path = dlg.FileName;
-            //        configuration.AppSettings.Settings["VLC_Path"].Value = VLC_Path;
-            //        configuration.Save(ConfigurationSaveMode.Full, true);
-            //        ConfigurationManager.RefreshSection("appSettings");
-            //    }
-            //}
+                var result = dlg.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    VLC_Path = dlg.FileName;
+                    configuration.AppSettings.Settings["VLC_Path"].Value = VLC_Path;
+                    configuration.Save(ConfigurationSaveMode.Full, true);
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+            }
 
             PrepareVideoPath();
             psi = new ProcessStartInfo();
@@ -80,9 +80,13 @@ namespace TelerikWpfApp1.Windows
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            const int WM_CLOSE = 0x0010;
-            SendMessage(VLC_hWnd, WM_CLOSE, 0, 0);
-            process.Kill();
+            try
+            {
+                const int WM_CLOSE = 0x0010;
+                SendMessage(VLC_hWnd, WM_CLOSE, 0, 0);
+                process.Kill();
+            }
+            catch(Exception ex){ }
         }
 
         private void PrepareVideoPath()
@@ -99,7 +103,7 @@ namespace TelerikWpfApp1.Windows
             int width = (int)(window.Width > window.ActualWidth ? window.Width : window.ActualWidth);
             int height = (int)(window.Height > window.ActualHeight ? window.Height : window.ActualHeight);
 
-            bool ret = MoveWindow(VLC_hWnd, 0, 0, (int)(width * 1.23), (int)(height * 1.18), true);
+            bool ret = MoveWindow(VLC_hWnd, 0, 0, (int)(width * 1), (int)(height * 1), true);
             //psi.WindowStyle= ProcessWindowStyle.Normal;
             //const int SW_MAXIMIZE = 3;
             //ShowWindow(VLC_hWnd, SW_MAXIMIZE);
